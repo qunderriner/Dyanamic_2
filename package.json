@@ -28,7 +28,10 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
-    "domready": "^1.0.8"
+    "domready": "^1.0.8",
+    "vega": "^5.9.2",
+    "vega-embed": "^6.3.2",
+    "vega-lite": "^4.5.1"
   },
   "scripts": {
     "start": "webpack-dev-server",
