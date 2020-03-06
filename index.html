@@ -15,9 +15,29 @@
   </head>
   <p>Hello shitworld1</p>
   <body>
-    Male: <input type="radio" id="Male" name="gender" /> Female:
-    <input type="radio" id="Female" name="gender" />
+    Male: <input type="radio" id="Male" name="gender" /> Female:<input
+      type="radio"
+      id="Female"
+      name="gender"
+    />
     <p>Click the "Try it" button to check the radio button.</p>
+
+    <br>  
+
+    <p>Please select income bracket:</p>
+    <input type="radio" id="income1" name="income" value="30">
+    <label for="income1">'$0-$24,999'</label><br>
+    <input type="radio" id="income2" name="income" value="60">
+    <label for="income2">'$24,999-$49,999'/label><br>  
+    <input type="radio" id="income3" name="income" value="100">
+    <label for="income3">'$49,999-$74,999'</label><br>
+    <input type="radio" id="income4" name="income" value="100">
+    <label for="income4">'$74,999-$99,999'</label><br>
+    <input type="radio" id="income5" name="income" value="100">
+    <label for="income5">'$100,000+'</label><br>
+    <input type="submit" value="Submit">
+
+
 
     <button onclick="myFunction()">Reload</button>
 
@@ -40,15 +60,44 @@
         var y = document.getElementById("Female");
         console.log(y);
         if (x.checked === true) {
-          var pathway = "test2.json";
+          var pathway = "_Male_.json";
         }
         if (y.checked === true) {
-          var pathway = "test.json";
+          var pathway = "_Female_.json";
         }
-        console.log(pathway);
+
+        var inc1 = document.getElementById("income1");
+        console.log(inc1);
+        var inc2 = document.getElementById("income2");
+        console.log(inc2);
+        var inc3 = document.getElementById("income3");
+        console.log(inc3);
+        var inc4 = document.getElementById("income4");
+        console.log(inc4);
+        var inc5 = document.getElementById("income5");
+        console.log(inc5);
+
+        if (inc1.checked === true) {
+          var pathway1 = "$0-$24,999";
+        }
+        if (inc2.checked === true) {
+          var pathway1 = "$24,999-$49,999";
+        }
+
+        if (inc3.checked === true) {
+          var pathway1 = "$49,999-$74,999";
+        }
+        if (inc4.checked === true) {
+          var pathway1 = "$74,999-$99,999";
+        }
+        if (inc5.checked === true) {
+          var pathway1 = "$100,000";
+        }
+
+        console.log(pathway,pathway1);
         var base =
           "https://raw.githubusercontent.com/qunderriner/Dyanamic_2/master/data/";
-        var spec = base.concat(pathway);
+        var spec = base.concat(pathway1,pathway);
         vegaEmbed("#vis", spec)
           .then(function(results) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
