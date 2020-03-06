@@ -13,8 +13,14 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
   </head>
-  <p>Hello shitworld</p>
+  <p>Hello shitworld1</p>
   <body>
+    Male: <input type="radio" id="Male" name="gender" /> Female:
+    <input type="radio" id="Female" name="gender" />
+    <p>Click the "Try it" button to check the radio button.</p>
+
+    <button onclick="myFunction()">Reload</button>
+
     <div id="vis"></div>
 
     <script type="text/javascript">
@@ -26,6 +32,33 @@
         })
         .catch(console.error);
     </script>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("Male");
+        console.log(x);
+        var y = document.getElementById("Female");
+        console.log(y);
+        if (x.checked === true) {
+          var pathway = "test2.json";
+        }
+        if (y.checked === true) {
+          var pathway = "test.json";
+        }
+        console.log(pathway);
+        var base =
+          "https://raw.githubusercontent.com/qunderriner/Dyanamic_2/master/data/";
+        var spec = base.concat(pathway);
+        vegaEmbed("#vis", spec)
+          .then(function(results) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          })
+          .catch(console.error);
+      }
+    </script>
+
+    <div id="vis"></div>
+
     <div id="app"></div>
     <script src="bundle.js"></script>
   </body>
