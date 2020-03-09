@@ -15,28 +15,65 @@
   </head>
   <p>Hello shitworld1</p>
   <body>
+    <p>Please select a gender:</p>
     Male: <input type="radio" id="Male" name="gender" /> Female:<input
       type="radio"
       id="Female"
       name="gender"
     />
-    <p>Click the "Try it" button to check the radio button.</p>
-
     <br>  
 
-    <p>Please select income bracket:</p>
-    <input type="radio" id="income1" name="income" value="30">
-    <label for="income1">'$0-$24,999'</label><br>
-    <input type="radio" id="income2" name="income" value="60">
-    <label for="income2">'$24,999-$49,999'/label><br>  
-    <input type="radio" id="income3" name="income" value="100">
-    <label for="income3">'$49,999-$74,999'</label><br>
-    <input type="radio" id="income4" name="income" value="100">
-    <label for="income4">'$74,999-$99,999'</label><br>
-    <input type="radio" id="income5" name="income" value="100">
-    <label for="income5">'$100,000+'</label><br>
-    <input type="submit" value="Submit">
+    <p>Please select an income bracket:</p>
+    <input type="radio" id="income1" name="income" >
+    <label for="income1">$0-$24,999</label><br>
+    <input type="radio" id="income2" name="income" >
+    <label for="income2">$24,999-$49,999</label><br>  
+    <input type="radio" id="income3" name="income" >
+    <label for="income3">$49,999-$74,999</label><br>
+    <input type="radio" id="income4" name="income" >
+    <label for="income4">$74,999-$99,999</label><br>
+    <input type="radio" id="income5" name="income" >
+    <label for="income5">$100,000+</label><br>
 
+    <br>
+
+    <p>Please select an an activity:</p>
+    <input type="radio" id="activity1" name="activity" >
+    <label for="activity">Caring For Household Members</label><br>
+    <input type="radio" id="activity2" name="activity" >
+    <label for="activity">Caring for NonHousehold Members</label><br>  
+    <input type="radio" id="activity3" name="activity" >
+    <label for="activity">Pursuing Education</label><br>
+    <input type="radio" id="activity4" name="activity" >
+    <label for="activity4">Eating & Drinking</label><br>
+    <input type="radio" id="activity5" name="activity" >
+    <label for="activity5">Civic Obligations</label><br>
+    <input type="radio" id="activity6" name="activity" >
+    <label for="activity">Household Activities</label><br>
+    <input type="radio" id="activity7" name="activity" >
+    <label for="activity">Coordinating Household Labor</label><br>  
+    <input type="radio" id="activity8" name="activity" >
+    <label for="activity">Personal Care</label><br>
+    <input type="radio" id="activity9" name="activity" >
+    <label for="activity">Talking on the Phone</label><br>
+    <input type="radio" id="activity10" name="activity" >
+    <label for="activity">Soliciting and Using Professional Services</label><br>
+    <input type="radio" id="activity11" name="activity" >
+    <label for="income1">Buying Items</label><br>
+    <input type="radio" id="activity12" name="activity" >
+    <label for="activity">Religious Activity<label><br>  
+    <input type="radio" id="activity13" name="activity" >
+    <label for="activity">Socializing</label><br>
+    <input type="radio" id="activity14" name="activity" >
+    <label for="income4">Playing Sports</label><br>
+    <input type="radio" id="activity15" name="activity" >
+    <label for="activity">Traveling for Any Reason</label><br>
+    <input type="radio" id="income16" name="activity" >
+    <label for="activity">Volunteering</label><br>
+    <input type="radio" id="activity17" name="activity" >
+    <label for="activity">Working<label><br>  
+    
+    <input type="submit" value="Submit">
 
 
     <button onclick="myFunction()">Reload</button>
@@ -94,10 +131,99 @@
           var pathway1 = "$100,000";
         }
 
-        console.log(pathway,pathway1);
+        var what1 = document.getElementById("activity1");
+        console.log(what1);
+        var what2 = document.getElementById("activity2");
+        console.log(what2);
+        var what3 = document.getElementById("activity3");
+        console.log(what3);
+        var what4 = document.getElementById("activity4");
+        console.log(what4);
+        var what5 = document.getElementById("activity5");
+        console.log(what5);
+        var what6 = document.getElementById("activity6");
+        console.log(what6);
+        var what7 = document.getElementById("activity7");
+        console.log(what7);
+        var what8 = document.getElementById("activity8");
+        console.log(what8);
+        var what9 = document.getElementById("activity9");
+        console.log(what9);
+        var what10 = document.getElementById("activity10");
+        console.log(what10);
+        var what11 = document.getElementById("activity11");
+        console.log(what11)
+        var what12 = document.getElementById("activity12");
+        console.log(what12);
+        var what13 = document.getElementById("activity13");
+        console.log(what13);
+        var what14 = document.getElementById("activity14");
+        console.log(what14);
+        var what15 = document.getElementById("activity15");
+        console.log(what15);
+        var what16 = document.getElementById("activity16");
+        console.log(what16);
+        var what17 = document.getElementById("activity17");
+        console.log(what17);
+
+
+        if (what1.checked === true) {
+          var pathway2 = "Caring_For_Household_Members.json";
+        }
+        if (what2.checked === true) {
+          var pathway2 = "Caring_for_NonHousehold_Members.json";
+        }
+        if (what3.checked === true) {
+          var pathway2 = "Pursuing_Education.json";
+        }
+        if (what4.checked === true) {
+          var pathway2 = "Eating_&_Drinking.json";
+        }
+        if (what5.checked === true) {
+          var pathway2 = "Civic_Obligations.json";
+        }
+
+        if (what6.checked === true) {
+          var pathway2 = "Household_Activities.json";
+        }
+        if (what7.checked === true) {
+          var pathway2 = "Coordinating_Household_Labor.json";
+        }
+        }
+        if (what8.checked === true) {
+          var pathway2 = "Personal_Care.json";
+        }
+        if (what9.checked === true) {
+          var pathway2 = "Talking_on_the_Phone.json";
+        }
+        if (what10.checked === true) {
+          var pathway2 = "Soliciting_and_Using_Professional_Services.json";
+        }
+        if (what11.checked === true) {
+          var pathway2 = "Buying_Items.json";
+        }
+        if (what12.checked === true) {
+          var pathway2 = "Religious_Activity.json";
+        }
+        if (what13.checked === true) {
+          var pathway2 = "Socializing.json";
+        }
+        if (what14.checked === true) {
+          var pathway2 = "Playing_Sports.json";
+        }
+        if (what15.checked === true) {
+          var pathway2 = "Traveling_for_Any_Reason.json";
+        }
+        if (what16.checked === true) {
+          var pathway2 = "Volunteering.json";
+        }
+        if (what17.checked === true) {
+          var pathway2 = "Working.json";
+
+        console.log(pathway,pathway1,pathway2);
         var base =
           "https://raw.githubusercontent.com/qunderriner/Dyanamic_2/master/data/";
-        var spec = base.concat(pathway1,pathway);
+        var spec = base.concat(pathway1,pathway,pathway2);
         vegaEmbed("#vis", spec)
           .then(function(results) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
