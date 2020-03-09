@@ -10,15 +10,46 @@ body {
   padding: 0;
   width: 100%;
 }
+h1 {
+  display: block;
+  font-size: 10em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 100;
+  margin-right: 0;
+  font-weight: bold;
+  color: DarkSlateGrey;
+}
+p {
+  margin: 30px;
+}
+.button {
+  background-color: #cd5c5c;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+}
 .flex-container {
   display: flex;
   background-color: CadetBlue;
   flex-direction: row;
-  margin: 10px;
+  margin: 5%;
 }
 .flex-container > div {
   background-color: #f1f1f1;
   margin: 10px;
   padding: 20px;
   font-size: 15px;
+}
+
+.bigmap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

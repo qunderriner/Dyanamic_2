@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@3"></script>
     <!-- Import vega-embed i chnaged above from 3 to 4-->
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@4"></script>
-    <title>How do Happy People Spend Their Time?</title>
+    <title>Leisure Studies</title>
     <meta charset="utf-8" />
     <link rel="stylesheet"  href="src/stylesheets/main.css" />
     <meta
@@ -14,7 +14,9 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
   </head>
-  <h1>Leisure Studies</h1>
+  <h1 align="center">Leisure Studies</h1>
+  <h3 align="center">How do happy people spend their time?</h3>
+  <h4 align="center">By Quinn Underriner</h3>
   <p>How do happy people spend their time?
     The American Time Use Survey (ATUS) is an annual survey that takes a
     statistically representative cross section of the US population and asks
@@ -39,69 +41,8 @@
     and cultural differences in the United States Population. ATUS only captures two genders 
     in their demographic data, or else more would have been used.
   </p>
-    <div class="flex-container">
-    <div>
-    <p>Please select a gender:</p>
-    Male: <input type="radio" id="Male" name="gender" /> Female:<input
-      type="radio"
-      id="Female"
-      name="gender">
-  </div>
-    <div>
-    <p>Please select a household income bracket:</p>
-    <input type="radio" id="income1" name="income" >
-    <label for="income1">$0-$24,999</label><br>
-    <input type="radio" id="income2" name="income" >
-    <label for="income2">$24,999-$49,999</label><br>
-    <input type="radio" id="income3" name="income" >
-    <label for="income3">$49,999-$74,999</label><br>
-    <input type="radio" id="income4" name="income" >
-    <label for="income4">$74,999-$99,999</label><br>
-    <input type="radio" id="income5" name="income" >
-    <label for="income5">$100,000+</label><br>
-    </div>
-    <div>
-    <p>Please select an activity:</p>
-    <input type="radio" id="activity1" name="activity">
-    <label for="activity1">Caring For Household Members</label><br>
-    <input type="radio" id="activity2" name="activity" >
-    <label for="activity2">Caring for NonHousehold Members</label><br>
-    <input type="radio" id="activity3" name="activity" >
-    <label for="activity3">Pursuing Education</label><br>
-    <input type="radio" id="activity4" name="activity" >
-    <label for="activity4">Eating & Drinking</label><br>
-    <input type="radio" id="activity5" name="activity" >
-    <label for="activity5">Civic Obligations</label><br>
-    <input type="radio" id="activity6" name="activity" >
-    <label for="activity6">Household Activities</label><br>
-    <input type="radio" id="activity7" name="activity" >
-    <label for="activity7">Coordinating Household Labor</label><br>
-    <input type="radio" id="activity8" name="activity" >
-    <label for="activity8">Personal Care</label><br>
-    <input type="radio" id="activity9" name="activity" >
-    <label for="activity9">Talking on the Phone</label><br>
-    <input type="radio" id="activity10" name="activity" >
-    <label for="activity10">Soliciting and Using Professional Services</label><br>
-    <input type="radio" id="activity11" name="activity" >
-    <label for="income11">Buying Items</label><br>
-    <input type="radio" id="activity12" name="activity" >
-    <label for="activity12">Religious Activity<label><br>
-    <input type="radio" id="activity13" name="activity" >
-    <label for="activity13">Socializing</label><br>
-    <input type="radio" id="activity14" name="activity" >
-    <label for="activity14">Playing Sports</label><br>
-    <input type="radio" id="activity15" name="activity" >
-    <label for="activity15">Traveling for Any Reason</label><br>
-    <input type="radio" id="activity16" name="activity" >
-    <label for="activity16">Volunteering</label><br>
-    <input type="radio" id="activity17" name="activity" >
-    <label for="activity17">Working<label><br>
-    </div>
-      <div class ="reloadbutton">
-    <button onclick="myFunction()">Reload Map</button>
-    </div>
-</div>
-    <div id="vis"></div>
+    <div align="center" id="vis"></div>
+    <div class="bigmap">
     <script type="text/javascript">
       var spec =
         "https://raw.githubusercontent.com/qunderriner/Dyanamic_2/master/data/start.json";
@@ -244,6 +185,70 @@
           .catch(console.error);
       }
     </script>
+        </div>
+    
+        <div class="flex-container">
+    <div>
+    <p>Please select a gender:</p>
+    Male: <input type="radio" id="Male" name="gender" /> Female:<input
+      type="radio"
+      id="Female"
+      name="gender">
+  </div>
+    <div>
+    <p>Please select a household income bracket:</p>
+    <input type="radio" id="income1" name="income" >
+    <label for="income1">$0-$24,999</label><br>
+    <input type="radio" id="income2" name="income" >
+    <label for="income2">$24,999-$49,999</label><br>
+    <input type="radio" id="income3" name="income" >
+    <label for="income3">$49,999-$74,999</label><br>
+    <input type="radio" id="income4" name="income" >
+    <label for="income4">$74,999-$99,999</label><br>
+    <input type="radio" id="income5" name="income" >
+    <label for="income5">$100,000+</label><br>
+    </div>
+    <div>
+    <p>Please select an activity:</p>
+    <input type="radio" id="activity1" name="activity">
+    <label for="activity1">Caring For Household Members</label><br>
+    <input type="radio" id="activity2" name="activity" >
+    <label for="activity2">Caring for NonHousehold Members</label><br>
+    <input type="radio" id="activity3" name="activity" >
+    <label for="activity3">Pursuing Education</label><br>
+    <input type="radio" id="activity4" name="activity" >
+    <label for="activity4">Eating & Drinking</label><br>
+    <input type="radio" id="activity5" name="activity" >
+    <label for="activity5">Civic Obligations</label><br>
+    <input type="radio" id="activity6" name="activity" >
+    <label for="activity6">Household Activities</label><br>
+    <input type="radio" id="activity7" name="activity" >
+    <label for="activity7">Coordinating Household Labor</label><br>
+    <input type="radio" id="activity8" name="activity" >
+    <label for="activity8">Personal Care</label><br>
+    <input type="radio" id="activity9" name="activity" >
+    <label for="activity9">Talking on the Phone</label><br>
+    <input type="radio" id="activity10" name="activity" >
+    <label for="activity10">Soliciting and Using Professional Services</label><br>
+    <input type="radio" id="activity11" name="activity" >
+    <label for="income11">Buying Items</label><br>
+    <input type="radio" id="activity12" name="activity" >
+    <label for="activity12">Religious Activity<label><br>
+    <input type="radio" id="activity13" name="activity" >
+    <label for="activity13">Socializing</label><br>
+    <input type="radio" id="activity14" name="activity" >
+    <label for="activity14">Playing Sports</label><br>
+    <input type="radio" id="activity15" name="activity" >
+    <label for="activity15">Traveling for Any Reason</label><br>
+    <input type="radio" id="activity16" name="activity" >
+    <label for="activity16">Volunteering</label><br>
+    <input type="radio" id="activity17" name="activity" >
+    <label for="activity17">Working<label><br>
+    </div>
+    <div>
+    <button class=button onclick="myFunction()">Reload Map</button>
+    </div>
+</div>
     <div id="vis"></div>
     <div id="app"></div>
     <script src="bundle.js"></script>
