@@ -1,14 +1,24 @@
-
 a {
   cursor: pointer;
 }
-
 html,
 body {
-  background: #D6D6CE;
+  background: #fffff0;
   font-family: Verdana, Geneva, sans-serif;
   height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
+}
+.flex-container {
+  display: flex;
+  background-color: CadetBlue;
+  flex-direction: row;
+  margin: 10px;
+}
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 15px;
 }
