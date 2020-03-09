@@ -4,7 +4,7 @@
     <!-- Import Vega 5 & Vega-Lite 3 (does not have to be from CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@3"></script>
-    <!-- Import vega-embed -->
+    <!-- Import vega-embed i chnaged above from 3 to 4-->
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@4"></script>
     <title>Scaffold</title>
     <meta charset="utf-8" />
@@ -39,43 +39,40 @@
 
     <p>Please select an an activity:</p>
     <input type="radio" id="activity1" name="activity" >
-    <label for="activity">Caring For Household Members</label><br>
+    <label for="activity1">Caring For Household Members</label><br>
     <input type="radio" id="activity2" name="activity" >
-    <label for="activity">Caring for NonHousehold Members</label><br>  
+    <label for="activity2">Caring for NonHousehold Members</label><br>  
     <input type="radio" id="activity3" name="activity" >
-    <label for="activity">Pursuing Education</label><br>
+    <label for="activity3">Pursuing Education</label><br>
     <input type="radio" id="activity4" name="activity" >
     <label for="activity4">Eating & Drinking</label><br>
     <input type="radio" id="activity5" name="activity" >
     <label for="activity5">Civic Obligations</label><br>
     <input type="radio" id="activity6" name="activity" >
-    <label for="activity">Household Activities</label><br>
+    <label for="activity6">Household Activities</label><br>
     <input type="radio" id="activity7" name="activity" >
-    <label for="activity">Coordinating Household Labor</label><br>  
+    <label for="activity7">Coordinating Household Labor</label><br>  
     <input type="radio" id="activity8" name="activity" >
-    <label for="activity">Personal Care</label><br>
+    <label for="activity8">Personal Care</label><br>
     <input type="radio" id="activity9" name="activity" >
-    <label for="activity">Talking on the Phone</label><br>
+    <label for="activity9">Talking on the Phone</label><br>
     <input type="radio" id="activity10" name="activity" >
-    <label for="activity">Soliciting and Using Professional Services</label><br>
+    <label for="activity10">Soliciting and Using Professional Services</label><br>
     <input type="radio" id="activity11" name="activity" >
-    <label for="income1">Buying Items</label><br>
+    <label for="income11">Buying Items</label><br>
     <input type="radio" id="activity12" name="activity" >
-    <label for="activity">Religious Activity<label><br>  
+    <label for="activity12">Religious Activity<label><br>  
     <input type="radio" id="activity13" name="activity" >
-    <label for="activity">Socializing</label><br>
+    <label for="activity13">Socializing</label><br>
     <input type="radio" id="activity14" name="activity" >
-    <label for="income4">Playing Sports</label><br>
+    <label for="activity14">Playing Sports</label><br>
     <input type="radio" id="activity15" name="activity" >
-    <label for="activity">Traveling for Any Reason</label><br>
-    <input type="radio" id="income16" name="activity" >
-    <label for="activity">Volunteering</label><br>
+    <label for="activity15">Traveling for Any Reason</label><br>
+    <input type="radio" id="activity16" name="activity" >
+    <label for="activity16">Volunteering</label><br>
     <input type="radio" id="activity17" name="activity" >
-    <label for="activity">Working<label><br>  
+    <label for="activity17">Working<label><br>  
     
-    <input type="submit" value="Submit">
-
-
     <button onclick="myFunction()">Reload</button>
 
     <div id="vis"></div>
@@ -97,10 +94,10 @@
         var y = document.getElementById("Female");
         console.log(y);
         if (x.checked === true) {
-          var pathway = "_Male_.json";
+          var pathway = "_Male_";
         }
         if (y.checked === true) {
-          var pathway = "_Female_.json";
+          var pathway = "_Female_";
         }
 
         var inc1 = document.getElementById("income1");
@@ -115,20 +112,20 @@
         console.log(inc5);
 
         if (inc1.checked === true) {
-          var pathway1 = "$0-$24,999";
+          var pathway1 = "0-24999";
         }
         if (inc2.checked === true) {
-          var pathway1 = "$24,999-$49,999";
+          var pathway1 = "24999-49999";
         }
 
         if (inc3.checked === true) {
-          var pathway1 = "$49,999-$74,999";
+          var pathway1 = "49999-74999";
         }
         if (inc4.checked === true) {
-          var pathway1 = "$74,999-$99,999";
+          var pathway1 = "74999-99999";
         }
         if (inc5.checked === true) {
-          var pathway1 = "$100,000";
+          var pathway1 = "100000%2B";
         }
 
         var what1 = document.getElementById("activity1");
@@ -189,7 +186,6 @@
         if (what7.checked === true) {
           var pathway2 = "Coordinating_Household_Labor.json";
         }
-        }
         if (what8.checked === true) {
           var pathway2 = "Personal_Care.json";
         }
@@ -219,11 +215,11 @@
         }
         if (what17.checked === true) {
           var pathway2 = "Working.json";
-
-        console.log(pathway,pathway1,pathway2);
+        }
         var base =
           "https://raw.githubusercontent.com/qunderriner/Dyanamic_2/master/data/";
         var spec = base.concat(pathway1,pathway,pathway2);
+        console.log(spec);
         vegaEmbed("#vis", spec)
           .then(function(results) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
