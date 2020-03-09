@@ -6,15 +6,45 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@3"></script>
     <!-- Import vega-embed i chnaged above from 3 to 4-->
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@4"></script>
-    <title>Scaffold</title>
+    <title>How do Happy People Spend Their Time?</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
   </head>
-  <p>Hello shitworld1</p>
+  <h1>"Leisure Studies"</h1>
+  <h3>Our Economic Model Fails to Fairly Distribute Leisure</h3>
+  <p>How do happy people spend their time?
+
+    The American Time Use Survey (ATUS) is an annual Survey that takes a 
+    statistically representative cross section of the US population and asks 
+    them, to the minute, how they spend their time. 
+    
+    In 2010, 2011 and 2012, participants in the American Time Use Survey 
+    were asked to rate their mood on a likert scale (e.g., in gradations from 1 to 7). 
+    I took those who labeled themselves as the happiest, 
+    and the least stressed, and examined how, on average, 
+    they were spending their time compared to those who rated 
+    themselves and deeply unhappy, and extremely stressed. </p>
   <body>
+    <p>On average, the happiest people spend 15 more minutes a day caring for people in their household, 
+      and about 18 minutes less working.</p>
+      <br>
+
+    <p>The least stressed out people spent 40 more minutes on education 
+      related activities and 26 more minutes on personal care. 
+  </p>
+
+  <br>
+
+  <p>The tool below allows you too how different groupings of gender and 
+    household income spend their 17 high-level ATUS time use categories. Pick one from each category
+    and press the reload button below to examine these different chloropleth maps. 
+    State level data is used as it likey captures latent variables related to economic 
+    activity and culture, as well as makes for a legible chart. 
+  </p>
+
     <p>Please select a gender:</p>
     Male: <input type="radio" id="Male" name="gender" /> Female:<input
       type="radio"
@@ -23,7 +53,7 @@
     />
     <br>  
 
-    <p>Please select an income bracket:</p>
+    <p>Please select a household income bracket:</p>
     <input type="radio" id="income1" name="income" >
     <label for="income1">$0-$24,999</label><br>
     <input type="radio" id="income2" name="income" >
@@ -79,7 +109,7 @@
 
     <script type="text/javascript">
       var spec =
-        "https://raw.githubusercontent.com/qunderriner/Dyanamic_2/master/data/test.json";
+        "https://raw.githubusercontent.com/qunderriner/Dyanamic_2/master/data/start.json";
       vegaEmbed("#vis", spec)
         .then(function(result) {
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
