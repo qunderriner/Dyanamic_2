@@ -253,5 +253,17 @@
     <div id="vis"></div>
     <div id="app"></div>
     <script src="bundle.js"></script>
+    <div id="vis2">
+  <script type="text/javascript">
+      var spec1 =
+        "https://raw.githubusercontent.com/qunderriner/Dyanamic_2/master/data/time_series.json";
+      vegaEmbed("#vis2", spec1)
+        .then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        })
+        .catch(console.error);
+    </script>
+    </div>
+  
   </body>
 </html>
