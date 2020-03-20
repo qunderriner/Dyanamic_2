@@ -56,9 +56,7 @@
     <script>
       function myFunction() {
         var x = document.getElementById("Male");
-        console.log(x);
         var y = document.getElementById("Female");
-        console.log(y);
         if (x.checked === true) {
           var pathway = "_Male_";
         }
@@ -66,15 +64,10 @@
           var pathway = "_Female_";
         }
         var inc1 = document.getElementById("income1");
-        console.log(inc1);
         var inc2 = document.getElementById("income2");
-        console.log(inc2);
         var inc3 = document.getElementById("income3");
-        console.log(inc3);
         var inc4 = document.getElementById("income4");
-        console.log(inc4);
         var inc5 = document.getElementById("income5");
-        console.log(inc5);
         if (inc1.checked === true) {
           var pathway1 = "0-24999";
         }
@@ -91,39 +84,22 @@
           var pathway1 = "100000%2B";
         }
         var what1 = document.getElementById("activity1");
-        console.log(what1);
         var what2 = document.getElementById("activity2");
-        console.log(what2);
         var what3 = document.getElementById("activity3");
-        console.log(what3);
         var what4 = document.getElementById("activity4");
-        console.log(what4);
         var what5 = document.getElementById("activity5");
-        console.log(what5);
         var what6 = document.getElementById("activity6");
-        console.log(what6);
         var what7 = document.getElementById("activity7");
-        console.log(what7);
         var what8 = document.getElementById("activity8");
-        console.log(what8);
         var what9 = document.getElementById("activity9");
-        console.log(what9);
         var what10 = document.getElementById("activity10");
-        console.log(what10);
         var what11 = document.getElementById("activity11");
-        console.log(what11)
         var what12 = document.getElementById("activity12");
-        console.log(what12);
         var what13 = document.getElementById("activity13");
-        console.log(what13);
         var what14 = document.getElementById("activity14");
-        console.log(what14);
         var what15 = document.getElementById("activity15");
-        console.log(what15);
         var what16 = document.getElementById("activity16");
-        console.log(what16);
         var what17 = document.getElementById("activity17");
-        console.log(what17);
         if (what1.checked === true) {
           var pathway2 = "Caring_For_Household_Members.json";
         }
@@ -244,7 +220,7 @@
     <input type="radio" id="activity16" name="activity" >
     <label for="activity16">Volunteering</label><br>
     <input type="radio" id="activity17" name="activity" >
-    <label for="activity17">Working<label><br>
+    <label for="activity17">Working<label><br> 
     </div>
     <div>
     <button class=button onclick="myFunction()">Reload Map</button>
@@ -264,6 +240,18 @@
         .catch(console.error);
     </script>
     </div>
+    <div class="citation">
+    <p>All data used for this project is from the US Census Time Use Survey. Specfically: 
+    Sandra L. Hofferth, Sarah M. Flood and Matthew Sobek. 
+    American Time Use Survey Data Extract Builder: Version 2.7 [dataset]. 
+    College Park, MD: University of Maryland and Minneapolis, MN: IPUMS, 2018. 
+    https://doi.org/10.18128/D060.V2.7https://ipums.org/projects/ipums-time-use
+    </p>
+
+    
+    </div>
+
+  
   
   </body>
 </html>

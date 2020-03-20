@@ -53,3 +53,10 @@ p {
   justify-content: center;
   align-items: center;
 }
+
+.citation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
