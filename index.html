@@ -34,17 +34,34 @@
     <p>The least stressed out people spent 40 more minutes on education
       related activities and 26 more minutes on personal care.
   </p>
-  <p>The tool below allows you to see how many minutes per day, on average, different subgroupings of gender 
-    and household income spend on the 17 high-level ATUS time use categories. You will be able to clearly 
-    see how economic conditions affect the ways in which people are able to spend their time. 
-    Select a group from each category and press the reload button below to examine the resulting map. 
-    This project examines state level data as it likely captures latent variables related to economic 
-    and cultural differences in the United States Population. ATUS only captures two genders 
+  <p>The chart below shows some stark time use differences between people who rate themselves as very happy 
+    and those who report only moderate or low levels of happiness. Happy people generally spend 
+    more time caring for family members, playing sports, volunteering, etc.
+</p>
+<div id="vis3">
+  <script type="text/javascript">
+      var spec2 =
+        "https://raw.githubusercontent.com/qunderriner/Dyanamic_2/master/data/static.json";
+      vegaEmbed("#vis3", spec2)
+        .then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        })
+        .catch(console.error);
+      </script>
+        </div>
+  <p>The tool below allows you to see how many minutes per day, on average, different subgroupings of gender
+    and household income spend on the 17 high-level ATUS time use categories. You will be able to clearly
+    see how economic conditions affect the ways in which people are able to spend their time.
+    Select a group from each category and press the reload button below to examine the resulting map.
+    This project examines state level data as it likely captures latent variables related to economic
+    and cultural differences in the United States Population. ATUS only captures two genders
     in their demographic data, or else more would have been used.
   </p>
-    <div align="center" id="vis"></div>
+
+<div align="center">
+   <div id="vis"></div>
     <div class="bigmap">
-    <script type="text/javascript">
+     <script type="text/javascript">
       var spec =
         "https://raw.githubusercontent.com/qunderriner/Dyanamic_2/master/data/start.json";
       vegaEmbed("#vis", spec)
@@ -55,102 +72,85 @@
     </script>
     <script>
       function myFunction() {
-        var x = document.getElementById("Male");
-        var y = document.getElementById("Female");
-        if (x.checked === true) {
+        var x = document.getElementById("gender");
+        console.log(123, x.value)
+        if (x.value === "Male") {
           var pathway = "_Male_";
         }
-        if (y.checked === true) {
+        if (x.value === "Female") {
           var pathway = "_Female_";
         }
-        var inc1 = document.getElementById("income1");
-        var inc2 = document.getElementById("income2");
-        var inc3 = document.getElementById("income3");
-        var inc4 = document.getElementById("income4");
-        var inc5 = document.getElementById("income5");
-        if (inc1.checked === true) {
+
+        var inc = document.getElementById("income");
+        if (inc.value=="income1") {
           var pathway1 = "0-24999";
         }
-        if (inc2.checked === true) {
+        if (inc.value === "income2") {
           var pathway1 = "24999-49999";
         }
-        if (inc3.checked === true) {
+        if (inc.value === "income3") {
           var pathway1 = "49999-74999";
         }
-        if (inc4.checked === true) {
+        if (inc.value === "income4") {
           var pathway1 = "74999-99999";
         }
-        if (inc5.checked === true) {
+        if (inc.value === "income5") {
           var pathway1 = "100000%2B";
         }
-        var what1 = document.getElementById("activity1");
-        var what2 = document.getElementById("activity2");
-        var what3 = document.getElementById("activity3");
-        var what4 = document.getElementById("activity4");
-        var what5 = document.getElementById("activity5");
-        var what6 = document.getElementById("activity6");
-        var what7 = document.getElementById("activity7");
-        var what8 = document.getElementById("activity8");
-        var what9 = document.getElementById("activity9");
-        var what10 = document.getElementById("activity10");
-        var what11 = document.getElementById("activity11");
-        var what12 = document.getElementById("activity12");
-        var what13 = document.getElementById("activity13");
-        var what14 = document.getElementById("activity14");
-        var what15 = document.getElementById("activity15");
-        var what16 = document.getElementById("activity16");
-        var what17 = document.getElementById("activity17");
-        if (what1.checked === true) {
-          var pathway2 = "Caring_For_Household_Members.json";
-        }
-        if (what2.checked === true) {
-          var pathway2 = "Caring_for_NonHousehold_Members.json";
-        }
-        if (what3.checked === true) {
-          var pathway2 = "Pursuing_Education.json";
-        }
-        if (what4.checked === true) {
-          var pathway2 = "Eating_&_Drinking.json";
-        }
-        if (what5.checked === true) {
-          var pathway2 = "Civic_Obligations.json";
-        }
-        if (what6.checked === true) {
-          var pathway2 = "Household_Activities.json";
-        }
-        if (what7.checked === true) {
-          var pathway2 = "Coordinating_Household_Labor.json";
-        }
-        if (what8.checked === true) {
-          var pathway2 = "Personal_Care.json";
-        }
-        if (what9.checked === true) {
-          var pathway2 = "Talking_on_the_Phone.json";
-        }
-        if (what10.checked === true) {
-          var pathway2 = "Soliciting_and_Using_Professional_Services.json";
-        }
-        if (what11.checked === true) {
-          var pathway2 = "Buying_Items.json";
-        }
-        if (what12.checked === true) {
-          var pathway2 = "Religious_Activity.json";
-        }
-        if (what13.checked === true) {
-          var pathway2 = "Socializing.json";
-        }
-        if (what14.checked === true) {
-          var pathway2 = "Playing_Sports.json";
-        }
-        if (what15.checked === true) {
-          var pathway2 = "Traveling_for_Any_Reason.json";
-        }
-        if (what16.checked === true) {
-          var pathway2 = "Volunteering.json";
-        }
-        if (what17.checked === true) {
-          var pathway2 = "Working.json";
-        }
+
+        var act = document.getElementById("activity");
+        if (act.value == "activity1") {
+                  var pathway2 = "Buying_Items.json";
+                }
+        if (act.value == "activity2") {
+                  var pathway2 = "Caring_For_Household_Members.json";
+                }
+        if (act.value == "activity3") {
+                  var pathway2 = "Caring_for_Nonhousehold_Members.json";
+                }
+        if (act.value == "activity4") {
+                  var pathway2 = "Civic_Obligations.json";
+                }
+        if (act.value == "activity5") {
+                  var pathway2 = "Coordinating_Household_Labor.json";
+                }
+        if (act.value == "activity6") {
+                  var pathway2 = "Eating_&_Drinking.json";
+                }
+        if (act.value == "activity7") {
+                  var pathway2 = "Household_Activities.json";
+                }
+        if (act.value == "activity8") {
+                  var pathway2 = "Personal_Care.json";
+                }
+        if (act.value == "activity9") {
+                  var pathway2 = "Playing_Sports.json";
+                }
+        if (act.value == "activity10") {
+                  var pathway2 = "Pursuing_Education.json";
+                }
+        if (act.value == "activity11") {
+                  var pathway2 = "Religious_Activity.json";
+                }
+        if (act.value == "activity12") {
+                  var pathway2 = "Socializing.json";
+                }
+        if (act.value == "activity13") {
+                  var pathway2 = "Soliciting_and_Using_Professional_Services.json";
+                }
+        if (act.value == "activity14") {
+                  var pathway2 = "Talking_on_the_Phone.json";
+                }
+        if (act.value == "activity15") {
+                  var pathway2 = "Traveling_for_Any_Reason.json";
+                }
+        if (act.value == "activity16") {
+                  var pathway2 = "Volunteering.json";
+                }
+        if (act.value == "activity17") {
+                  var pathway2 = "Working.json";
+                }
+
         var base =
           "https://raw.githubusercontent.com/qunderriner/Dyanamic_2/master/data/";
         var spec = base.concat(pathway1,pathway,pathway2);
@@ -163,76 +163,72 @@
       }
     </script>
         </div>
-    
-        <div class="flex-container">
+      </div>
+
+
+<div class="flex-container">
     <div>
-    <p>Please select a gender:</p>
-    Male: <input type="radio" id="Male" name="gender" /> Female:<input
+  Gender:
+  <select id="gender">
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+</select>
+
+<!--
+    Male: <input type="radio" id="Male" name="gender" />
+    Female:<input
       type="radio"
       id="Female"
-      name="gender">
+      name="gender"> -->
   </div>
+
+
     <div>
-    <p>Please select a household income bracket:</p>
-    <input type="radio" id="income1" name="income" >
-    <label for="income1">$0-$24,999</label><br>
-    <input type="radio" id="income2" name="income" >
-    <label for="income2">$24,999-$49,999</label><br>
-    <input type="radio" id="income3" name="income" >
-    <label for="income3">$49,999-$74,999</label><br>
-    <input type="radio" id="income4" name="income" >
-    <label for="income4">$74,999-$99,999</label><br>
-    <input type="radio" id="income5" name="income" >
-    <label for="income5">$100,000+</label><br>
-    </div>
-    <div>
-    <p>Please select an activity:</p>
-    <input type="radio" id="activity1" name="activity">
-    <label for="activity1">Caring For Household Members</label><br>
-    <input type="radio" id="activity2" name="activity" >
-    <label for="activity2">Caring for NonHousehold Members</label><br>
-    <input type="radio" id="activity3" name="activity" >
-    <label for="activity3">Pursuing Education</label><br>
-    <input type="radio" id="activity4" name="activity" >
-    <label for="activity4">Eating & Drinking</label><br>
-    <input type="radio" id="activity5" name="activity" >
-    <label for="activity5">Civic Obligations</label><br>
-    <input type="radio" id="activity6" name="activity" >
-    <label for="activity6">Household Activities</label><br>
-    <input type="radio" id="activity7" name="activity" >
-    <label for="activity7">Coordinating Household Labor</label><br>
-    <input type="radio" id="activity8" name="activity" >
-    <label for="activity8">Personal Care</label><br>
-    <input type="radio" id="activity9" name="activity" >
-    <label for="activity9">Talking on the Phone</label><br>
-    <input type="radio" id="activity10" name="activity" >
-    <label for="activity10">Soliciting and Using Professional Services</label><br>
-    <input type="radio" id="activity11" name="activity" >
-    <label for="income11">Buying Items</label><br>
-    <input type="radio" id="activity12" name="activity" >
-    <label for="activity12">Religious Activity<label><br>
-    <input type="radio" id="activity13" name="activity" >
-    <label for="activity13">Socializing</label><br>
-    <input type="radio" id="activity14" name="activity" >
-    <label for="activity14">Playing Sports</label><br>
-    <input type="radio" id="activity15" name="activity" >
-    <label for="activity15">Traveling for Any Reason</label><br>
-    <input type="radio" id="activity16" name="activity" >
-    <label for="activity16">Volunteering</label><br>
-    <input type="radio" id="activity17" name="activity" >
-    <label for="activity17">Working<label><br> 
+    Income bracket:
+    <select id='income'>
+      <option value="income1">$0-$24,999</option>
+      <option value="income2">$24,999-$49,999</option>
+      <option value="income3">$49,999-$74,999</option>
+      <option value="income4">$74,999-$99,999</option>
+      <option value="income5">$100,000+</option>
+    </select>
+  </div>
+
+  <div>
+    Activity:
+    <select id="activity">
+      <option value="activity1">Buying items</option>
+      <option value="activity2">Caring for household members</option>
+      <option value="activity3">Caring for nonhousehold members</option>
+      <option value="activity4">Civic obligations</option>
+      <option value="activity5">Coordinating household labor</option>
+      <option value="activity6">Eating and drinking</option>
+      <option value="activity7">Household activities</option>
+      <option value="activity8">Personal care</option>
+      <option value="activity9">Playing sports</option>
+      <option value="activity10">Pursuing education</option>
+      <option value="activity11">Religious activity</option>
+      <option value="activity12">Socializing</option>
+      <option value="activity13">Soliciting and using professional services</option>
+      <option value="activity14">Talking on the phone</option>
+      <option value="activity15">Traveling for any reason</option>
+      <option value="activity16">Volunteering</option>
+      <option value="activity17">Working</option>
+  </select>
     </div>
     <div>
     <button class=button onclick="myFunction()">Reload Map</button>
     </div>
 </div>
+
+
     <div id="vis"></div>
     <div id="app"></div>
     <script src="bundle.js"></script>
+    <div align="center", width=100%>
     <div id="vis2">
   <script type="text/javascript">
-      var spec1 =
-        "https://raw.githubusercontent.com/qunderriner/Dyanamic_2/master/data/time_series.json";
+      var spec1 = "https://raw.githubusercontent.com/qunderriner/Dyanamic_2/master/data/time_series.json";
       vegaEmbed("#vis2", spec1)
         .then(function(result) {
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -240,18 +236,19 @@
         .catch(console.error);
     </script>
     </div>
+</div>
     <div class="citation">
-    <p>All data used for this project is from the US Census Time Use Survey. Specfically: 
-    Sandra L. Hofferth, Sarah M. Flood and Matthew Sobek. 
-    American Time Use Survey Data Extract Builder: Version 2.7 [dataset]. 
-    College Park, MD: University of Maryland and Minneapolis, MN: IPUMS, 2018. 
+    <p>All data used for this project is from the US Census Time Use Survey. Specfically:
+    Sandra L. Hofferth, Sarah M. Flood and Matthew Sobek.
+    American Time Use Survey Data Extract Builder: Version 2.7 [dataset].
+    College Park, MD: University of Maryland and Minneapolis, MN: IPUMS, 2018.
     https://doi.org/10.18128/D060.V2.7https://ipums.org/projects/ipums-time-use
     </p>
 
-    
+
     </div>
 
-  
-  
+
+
   </body>
 </html>
